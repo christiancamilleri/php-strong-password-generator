@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (isset($_GET['characterNumber'])) {
     // salvo in una variabile la lunghezza della password richiesta dall utente
     $passwordLength = $_GET['characterNumber'];
@@ -33,14 +35,22 @@ function getRandomPassword($num)
 
     }
 
+    $newPassword = implode($password);
+
+    $_SESSION['password'] = $newPassword;
+
     // trasformo l array password in una stringa
-    return implode($password);
+    return $newPassword;
 
 }
+
+
 
 if (isset($passwordLength)) {
     // password generata 
     $randomPassword = getRandomPassword($passwordLength);
+
+
 
 }
 

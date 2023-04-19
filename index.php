@@ -16,7 +16,7 @@ require './partials/function.php'
 <body>
 
     <h1>STRONG PASSWORD GENERATOR</h1>
-    <form action="index.php">
+    <form action="showPassword.php">
 
         <input name="characterNumber" type="number" min="4" max="24" method="GET">
         <input type="submit">
@@ -24,16 +24,18 @@ require './partials/function.php'
     </form>
 
     <?php
-    echo 'Ecco qui la tua password:';
 
     if (isset($randomPassword)) {
-        echo '<h3>' . $randomPassword . '<h3>';
+        echo 'Ecco qui la tua password:' . '<h3>' . $randomPassword . '<h3>';
     } else {
         echo '<br> inserisci un numero qui sopra per ricevere la password';
     }
-    ;
 
     ?>
+
+
+
+
 </body>
 
 </html>
